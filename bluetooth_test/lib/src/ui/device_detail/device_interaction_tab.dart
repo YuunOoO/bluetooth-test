@@ -8,7 +8,7 @@ import 'package:provider/provider.dart';
 import 'characteristic_interaction_dialog.dart';
 
 part 'device_interaction_tab.g.dart';
-//ignore_for_file: annotate_overrides
+//ignore_for_file: annotate_overrides`
 
 class DeviceInteractionTab extends StatelessWidget {
   final DiscoveredDevice device;

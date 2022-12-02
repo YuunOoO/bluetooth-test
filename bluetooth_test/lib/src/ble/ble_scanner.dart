@@ -27,10 +27,13 @@ class BleScanner implements ReactiveState<BleScannerState> {
     _subscription?.cancel();
     _subscription =
         _ble.scanForDevices(withServices: serviceIds).listen((device) {
-      final knownDeviceIndex = _devices.indexWhere((d) => d.id == device.id);
-      if (knownDeviceIndex >= 0) {
-        _devices[knownDeviceIndex] = device;
-      } else {
+      //final knownDeviceIndex = _devices.indexWhere((d) => d.id == device.id);
+      //if (knownDeviceIndex >= 0) {
+      // _devices[knownDeviceIndex] = device;
+      //} else {
+      // _devices.add(device);
+      // }
+      if (_devices.every((element) => element.id != device.id)) {
         _devices.add(device);
       }
       _pushState();
